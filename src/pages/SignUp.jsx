@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Link, useNavigate } from 'react-router-dom'
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { setDoc, doc, serverTimestamp } from 'firebase/firestore'
-import { db } from '../firebase.config.js'
+import { db } from '../firebase.config'
 import { toast } from 'react-toastify'
 
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
