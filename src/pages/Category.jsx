@@ -16,7 +16,7 @@ import { db } from "../firebase.config";
 import { toast } from "react-toastify";
 import Spinner from "../components/Spinner";
 
-function Offers() {
+function Category() {
   const [listings, setListings] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -31,7 +31,7 @@ function Offers() {
         // Create a query
         const q = query(
           listingRef,
-          where("offer", "==", true),
+          where("type", "==", params.categoryName),
           orderBy("timestamp", "desc"),
           limit(10)
         );
@@ -56,13 +56,15 @@ function Offers() {
     };
 
     fetchListings();
-  }, []);
+  }, [params.categoryName]);
 
   return (
     <div className="category">
       <header>
         <p className="pageHeader">
-          Offers
+          {params.categoryName === "rent"
+            ? "Places for Rent"
+            : "Places for Sale"}
         </p>
       </header>
       {loading ? (
@@ -82,9 +84,9 @@ function Offers() {
           </main>
         </>
       ) : (
-        <p>There are no current offers available at this moment.</p>
+        <p>No listings for {params.categoryName}</p>
       )}
     </div>
   );
 }
-export default Offers;
+export default Category;

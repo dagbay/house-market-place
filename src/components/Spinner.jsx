@@ -1,12 +1,12 @@
-import SpinnerGIF from '../assets/gif/spinner.gif'
+import SpinnerGIF from "../assets/gif/spinner.gif";
 
 function Spinner() {
   return (
     <div className="loadingSpinnerContainer">
       <div className="loadingSpinner">
-        <SpinnerGIF />
+        <img src={SpinnerGIF} alt="Loading..." />
       </div>
     </div>
-  )
+  );
 }
-export default Spinner
+export default Spinner;

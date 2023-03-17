@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -8,7 +8,7 @@ const firebaseConfig = {
   projectId: "house-marketplace-app-a03d8",
   storageBucket: "house-marketplace-app-a03d8.appspot.com",
   messagingSenderId: "942939951362",
-  appId: "1:942939951362:web:ef32ae0f3ccc7ef96cb21b"
+  appId: "1:942939951362:web:ef32ae0f3ccc7ef96cb21b",
 };
 
 // Initialize Firebase
