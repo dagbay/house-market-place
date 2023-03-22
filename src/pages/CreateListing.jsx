@@ -76,12 +76,12 @@ function CreateListing() {
       location =
         data.status === "ZERO_RESULTS"
           ? undefined
-          : data.results[0]?.formatted_address
+          : data.results[0]?.formatted_address;
 
-      if (location === undefined || location.includes('undefined')) {
-        setLoading(false)
-        toast.error('Please enter a correct address')
-        return
+      if (location === undefined || location.includes("undefined")) {
+        setLoading(false);
+        toast.error("Please enter a correct address");
+        return;
       }
     } else {
       geolocation.lat = latitude;
