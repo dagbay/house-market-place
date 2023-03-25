@@ -43,7 +43,7 @@ function Slider() {
     <Spinner />;
   }
 
-  if (!listings.length) {
+  if (!listings) {
     return <></>;
   }
 
