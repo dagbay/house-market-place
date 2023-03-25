@@ -14,7 +14,7 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 function Slider() {
   const [loading, setLoading] = useState(true);
-  const [listings, setListings] = useState(null);
+  const [listings, setListings] = useState([]);
 
   const navigate = useNavigate();
 
@@ -43,7 +43,7 @@ function Slider() {
     <Spinner />;
   }
 
-  if (listings.length === 0) {
+  if (!listings.length) {
     return <></>;
   }
 
