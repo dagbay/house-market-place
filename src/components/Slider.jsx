@@ -18,11 +18,6 @@ function Slider() {
 
   const navigate = useNavigate();
 
-  const pricify = (num) => {
-    const str = num.toString();
-    return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
-
   const fetchListings = async () => {
     const listingsRef = collection(db, "listings");
     const q = query(listingsRef, orderBy("timestamp", "desc"), limit(5));
@@ -46,6 +41,10 @@ function Slider() {
 
   if (loading) {
     <Spinner />;
+  }
+
+  if (listings.length === 0) {
+    return <></>;
   }
 
   return (
